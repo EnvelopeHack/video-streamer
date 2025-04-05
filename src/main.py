@@ -250,7 +250,7 @@ async def video_stream(request: Request):
     else:
         return StreamingResponse(open(VIDEO_PATH, "rb"), media_type="video/mp4")
 
-@app.websocket("/ws")
+@app.websocket("/socket-video")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     
